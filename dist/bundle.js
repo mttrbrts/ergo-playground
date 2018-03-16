@@ -38,19 +38,13 @@ function runButton() {
     document.getElementById("result").innerHTML = "[ Query is executing ]";
     const compiled = Jura.compile(config).result;
     
-    const clauseJson = {
-	"$class": "org.accordproject.helloworld.TemplateModel",
-	"name": "Fred Blogs"
-    };
-    const requestJson = {
-	"$class": "org.accordproject.helloworld.Request",
-	"input": "Accord Project"
-    };
-    const contractName = "HelloWorld";
-    const clauseName = "helloworld";
+    const clauseJson = JSON.parse(document.getElementById("clause").value);
+    const requestJson = JSON.parse(document.getElementById("request").value);
+    const contractName = document.getElementById("contractName").value;
+    const clauseName = document.getElementById("clauseName").value;
     const params = { 'this': clauseJson, 'request': requestJson, 'now': "" };
-    const contract = 'const c = new ' + contractName+ '();'; // Instantiate the contract
-    const functionName = 'c.' + clauseName;
+    const contract = 'const contract = new ' + contractName+ '();'; // Instantiate the contract
+    const functionName = 'contract.' + clauseName;
     const clauseCall = functionName+'(params);'; // Create the clause call
     const result = eval(compiled + contract + clauseCall); // Call the logic
     document.getElementById("result").innerHTML = escapeHtml(JSON.stringify(result));
