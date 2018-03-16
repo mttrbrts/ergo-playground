@@ -14,11 +14,11 @@
     <textarea class="form-control" id="source" rows="8">package org.accordproject.helloworld
 
 contract HelloWorld over TemplateModel {
-   clause helloworld(request Request) Response {
-       new Response{ output: "Hello " + this.name + " (" + request.input + ")" }
+   clause helloworld(request Request) : Response {
+       new Response{ output: "Hello " ++ this.name ++ " (" ++ request.input ++ ")" }
   }
-   clause goodbye(request Request) Response {
-       new Response{ output: "Goodbye " + this.name + " (" + request.input + ")" }
+   clause goodbye(request Request) : Response {
+       new Response{ output: "Goodbye " ++ this.name ++ " (" ++ request.input ++ ")" }
   }
 }</textarea>
   </div>

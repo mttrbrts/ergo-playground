@@ -20,8 +20,8 @@
     "composer-common": "0.17.4",
     "debug": "^2.6.2",
     "jquery": "^3.3.1",
-    "jura-compiler": "^0.0.19",
-    "jura-engine": "^0.0.19",
+    "jura-compiler": "^0.0.22",
+    "jura-engine": "^0.0.23",
     "moment": "^2.20.1",
     "popper.js": "^1.12.3"
   }
