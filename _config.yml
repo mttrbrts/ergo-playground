@@ -21,6 +21,4 @@ sass:
     load_paths:
         - _sass
         - node_modules
-exclude: []
-
-theme: jekyll-theme-cayman
+exclude: [node_modules/balanced-match]
