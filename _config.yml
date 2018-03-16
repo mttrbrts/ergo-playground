@@ -1,0 +1,24 @@
+# Site settings
+title: Jura Playground
+author: Jerome Simeon
+author_avatar: https://gravatar.com/avatar/ad516503a11cd5ca435acc9bb6523536?s=50
+email: jerome@clause.io
+description: A demo of the Jura language for smart legal contracts
+baseurl: "" # optional
+url: "https://accordproject.github.io/jura"
+github_repo: accordproject/jura
+#google_analytics: UA-80085-YOUR-ID
+#disqus: disqus-id
+
+# Build settings
+markdown: kramdown
+permalink: pretty
+excerpt_separator: "<!-- more -->"
+
+gems:
+  - jekyll-sitemap
+sass:
+    load_paths:
+        - _sass
+        - node_modules
+exclude: []
