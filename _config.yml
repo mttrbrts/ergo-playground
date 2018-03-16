@@ -21,4 +21,4 @@ sass:
     load_paths:
         - _sass
         - node_modules
-exclude: [node_modules/balanced-match]
+exclude: [node_modules/balanced-match,node_modules/brace-expansion]
