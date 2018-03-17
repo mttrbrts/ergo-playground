@@ -1,17 +1,30 @@
 <form>
   <div class="form-group">
-    <label for="clause">Clause data</label>
-    <textarea class="form-control" id="clause" rows="3">{ "$class": "org.accordproject.helloworld.TemplateModel",
-  "name": "Fred Blogs" }</textarea>
-  </div>
-  <div class="form-group">
-    <label for="request">Request data</label>
-    <textarea class="form-control" id="request" rows="3">{ "$class": "org.accordproject.helloworld.Request",
-  "input": "Accord Project" }</textarea>
+    <label for="cto">model</label>
+    <textarea class="form-control" id="model" rows="6">namespace org.accordproject.helloworld
+
+transaction Request {
+  o String input
+}
+
+transaction Response {
+  o String output
+}
+
+/**
+ * The template model
+ */
+@AccordTemplateModel("helloworld")
+concept TemplateModel {
+  /**
+   * The name for the clause
+   */
+  o String name
+}</textarea>
   </div>
   <div class="form-group">
     <label for="source">Jura source</label>
-    <textarea class="form-control" id="source" rows="8">package org.accordproject.helloworld
+    <textarea class="form-control" id="source" rows="8">namespace org.accordproject.helloworld
 
 contract HelloWorld over TemplateModel {
    clause helloworld(request Request) : Response {
@@ -23,16 +36,26 @@ contract HelloWorld over TemplateModel {
 }</textarea>
   </div>
   <div class="form-group">
-  <div class="row">
-    <div class="col">
-      <label for="contractName">Contract name</label>
-      <input class="form-control" id="contractName" value="HelloWorld"/>
-    </div>
-    <div class="col">
-      <label for="clauseName">Clause name</label>
-      <input class="form-control" id="clauseName" value="helloworld"/>
-    </div>
+    <label for="clause">Clause data</label>
+    <textarea class="form-control" id="clause" rows="3">{ "$class": "org.accordproject.helloworld.TemplateModel",
+  "name": "Fred Blogs" }</textarea>
   </div>
+  <div class="form-group">
+    <label for="request">Request data</label>
+    <textarea class="form-control" id="request" rows="3">{ "$class": "org.accordproject.helloworld.Request",
+  "input": "Accord Project" }</textarea>
+  </div>
+  <div class="form-group">
+    <div class="row">
+      <div class="col">
+	<label for="contractName">Contract name</label>
+	<input class="form-control" id="contractName" value="HelloWorld"/>
+      </div>
+      <div class="col">
+	<label for="clauseName">Clause name</label>
+	<input class="form-control" id="clauseName" value="helloworld"/>
+      </div>
+    </div>
   </div>
   <div class="form-group text-right">
     <button type="button"

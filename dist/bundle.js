@@ -49,3 +49,6 @@ function runButton() {
     const result = eval(compiled + contract + clauseCall); // Call the logic
     document.getElementById("result").innerHTML = escapeHtml(JSON.stringify(result));
 }
+function showVersion() {
+    document.getElementById("version").innerHTML += " (v " + Jura.version() + ")";
+}
