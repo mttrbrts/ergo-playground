@@ -21,7 +21,7 @@ function compileButton() {
     // Clean-up naming for Sexps
     config.jura = document.getElementById("source").value;
     // Call compiler
-    document.getElementById("result").innerHTML = "[ Query is compiling ]";
+    document.getElementById("result").innerHTML = "[ Jura logic is compiling ]";
     const compiled = Jura.compile(config).result;
     document.getElementById("result").innerHTML = escapeHtml(compiled);
 }
@@ -38,11 +38,11 @@ function runButton() {
     document.getElementById("result").innerHTML = "[ Query is executing ]";
     const compiled = Jura.compile(config).result;
     
-    const clauseJson = JSON.parse(document.getElementById("clause").value);
+    const contractJson = JSON.parse(document.getElementById("contract").value);
     const requestJson = JSON.parse(document.getElementById("request").value);
     const contractName = document.getElementById("contractName").value;
     const clauseName = document.getElementById("clauseName").value;
-    const params = { 'this': clauseJson, 'request': requestJson, 'now': "" };
+    const params = { 'contract': contractJson, 'request': requestJson, 'now': "" };
     const contract = 'const contract = new ' + contractName+ '();'; // Instantiate the contract
     const functionName = 'contract.' + clauseName;
     const clauseCall = functionName+'(params);'; // Create the clause call
