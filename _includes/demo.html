@@ -33,15 +33,14 @@ concept TemplateModel {
     <textarea class="form-control" id="source" rows="8">namespace org.accordproject.hellogoodbye
 
 contract HelloGoodbye over TemplateModel {
-   // Simple Clause
-   clause hello(request Request) : Response {
-       new Response{ output: "Hello " ++ contract.name ++ " (" ++ request.input ++")" }
+  // Simple Clause
+  clause hello(request Request) : Response {
+    return new Response{ output: "Hello " ++ contract.name ++ " (" ++ request.input ++")" }
   }
   clause goodbye(request Request) : Response {
-       new Response{ output: "Goodbye " ++ contract.name ++ " (" ++ request.input ++")" }
+    return new Response{ output: "Goodbye " ++ contract.name ++ " (" ++ request.input ++")" }
   }
-}
-</textarea>
+}</textarea>
   </div>
   <div class="form-group">
     <label for="contract">Contract data</label>
@@ -54,7 +53,12 @@ contract HelloGoodbye over TemplateModel {
     "goodbye": {
 	"greeting": "Farewell"
     }
-}
+}</textarea>
+  </div>
+  <div class="form-group">
+    <label for="request">Contract State</label>
+    <textarea class="form-control" id="state" rows="3">{ "$class": "org.accordproject.contract.State",
+  "status" : "EXECUTORY" }
 </textarea>
   </div>
   <div class="form-group">
@@ -82,7 +86,11 @@ contract HelloGoodbye over TemplateModel {
             class="btn btn-primary">run</button>
   </div>
   <div class="form-group">
-    <label for="result">result</label>
-    <textarea class="form-control" id="result" rows="8"></textarea>
+    <label for="result">Response</label>
+    <textarea class="form-control" id="result" rows="5"></textarea>
+  </div>
+  <div class="form-group">
+    <label for="result">New State</label>
+    <textarea class="form-control" id="newstate" rows="3"></textarea>
   </div>
 </form>

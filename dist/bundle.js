@@ -43,16 +43,23 @@ function runButton() {
 	document.getElementById("result").innerHTML = "[ Executing contract ]";
 	const contractJson = JSON.parse(document.getElementById("contract").value);
 	const requestJson = JSON.parse(document.getElementById("request").value);
+	const stateJson = JSON.parse(document.getElementById("state").value);
 	const contractName = document.getElementById("contractName").value;
 	const clauseName = document.getElementById("clauseName").value;
-	const params = { 'contract': contractJson, 'request': requestJson, 'now': "" };
+	const params = { 'contract': contractJson, 'request': requestJson, 'state' : stateJson, 'now': "" };
 	const contract = 'const contract = new ' + contractName+ '();'; // Instantiate the contract
 	const functionName = 'contract.' + clauseName;
 	const clauseCall = functionName+'(params);'; // Create the clause call
 	var result;
 	try {
 	    result = eval(compiled + contract + clauseCall); // Call the logic
-	    document.getElementById("result").innerHTML = escapeHtml(JSON.stringify(result));
+	    if (!('response' in result)) {
+		document.getElementById("result").innerHTML = escapeHtml(JSON.stringify(result))
+		document.getElementById("newstate").innerHTML = escapeHtml("");
+	    } else {
+		document.getElementById("result").innerHTML = escapeHtml(JSON.stringify(result.response));
+		document.getElementById("newstate").innerHTML = escapeHtml(JSON.stringify(result.state));
+	    }
 	}
 	catch(error) {
 	    document.getElementById("result").innerHTML = escapeHtml(error);
