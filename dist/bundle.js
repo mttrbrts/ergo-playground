@@ -25,6 +25,13 @@ function compileButton() {
     const compiled = Jura.compile(config).result;
     document.getElementById("result").innerHTML = escapeHtml(compiled);
 }
+function setState() {
+    document.getElementById("state").innerHTML = document.getElementById("newstate").value;
+    document.getElementById("newstate").innerHTML = "";
+}
+function clearState() {
+    document.getElementById("newstate").innerHTML = "";
+}
 function runButton() {
     // Built-in config
     const config= {

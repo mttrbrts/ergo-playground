@@ -1,82 +1,79 @@
 <form>
+  <h4>Contract Creation</h4>
   <div class="form-group">
-    <label for="cto">model</label>
-    <textarea class="form-control" id="model" rows="6">namespace org.accordproject.hellogoodbye
+    <div class="row">
+      <div class="col">
+        <label for="cto">CTO model</label>
+        <textarea class="form-control" id="model" rows="10">namespace org.accordproject.hellogoodbye
 
 transaction Request {
   o String input
 }
-
 transaction Response {
   o String output
 }
 
-/**
- * The template model
- */
 concept Greeting {
   o String greeting
 }
 
 @AccordTemplateModel("HelloGoodbye")
 concept TemplateModel {
-  /**
-   * The name for the clause
-   */
   o String name
   o Greeting helloworld
   o Greeting goodbye
 }</textarea>
-  </div>
-  <div class="form-group">
-    <label for="source">Jura source</label>
-    <textarea class="form-control" id="source" rows="8">namespace org.accordproject.hellogoodbye
+      </div>
+      <div class="col">
+        <label for="source">Jura source</label>
+        <textarea class="form-control" id="source" rows="10">namespace org.accordproject.hellogoodbye
 
 contract HelloGoodbye over TemplateModel {
-  // Simple Clause
   clause hello(request Request) : Response {
-    return new Response{ output: "Hello " ++ contract.name ++ " (" ++ request.input ++")" }
+    return new Response{
+      output: "Hello " ++ contract.name
+                       ++ " (" ++ request.input ++")" }
   }
   clause goodbye(request Request) : Response {
-    return new Response{ output: "Goodbye " ++ contract.name ++ " (" ++ request.input ++")" }
+    return new Response{
+      output: "Goodbye " ++ contract.name
+                         ++ " (" ++ request.input ++")" }
   }
 }</textarea>
-  </div>
+      </div>
+    </div>
+    </div>
   <div class="form-group">
-    <label for="contract">Contract data</label>
-    <textarea class="form-control" id="contract" rows="3">{
-    "$class": "org.accordproject.hellogoodbye.TemplateModel",
-    "name": "Fred Blogs",
-    "hello": {
-	"greeting": "Hello"
-    },
-    "goodbye": {
-	"greeting": "Farewell"
-    }
-}</textarea>
+	<label for="contract">Contract data</label>
+	<textarea class="form-control" id="contract" rows="5">{ "$class": "org.accordproject.hellogoodbye.TemplateModel",
+  "name": "Fred Blogs",
+  "hello": { "greeting": "Hello" },
+  "goodbye": { "greeting": "Farewell" } }</textarea>
   </div>
+  <h4>Contract Execution</h4>
   <div class="form-group">
-    <label for="request">Contract State</label>
-    <textarea class="form-control" id="state" rows="3">{ "$class": "org.accordproject.contract.State",
-  "status" : "EXECUTORY" }
-</textarea>
-  </div>
-  <div class="form-group">
-    <label for="request">Request data</label>
-    <textarea class="form-control" id="request" rows="3">{
-    "$class": "org.accordproject.hellogoodbye.Request",
-    "input": "Accord Project"
-}</textarea>
+    <div class="row">
+      <div class="col">
+        <label for="request">Input Request</label>
+        <textarea class="form-control" id="request" rows="3">{ "$class": "org.accordproject.hellogoodbye.Request",
+  "input": "Accord Project" }</textarea>
+      </div> 
+      <div class="col">
+        <label for="request">Input State</label>
+        <textarea class="form-control" id="state" rows="3">{ "$class": "org.accordproject.contract.State",
+  "status" : "EXECUTORY" }</textarea>
+      </div>
+    </div>
   </div>
   <div class="form-group">
     <div class="row">
       <div class="col">
-	<label for="contractName">Contract name</label>
-	<input class="form-control" id="contractName" value="HelloGoodbye"/>
+        <label for="contractName">Contract name</label>
+        <input class="form-control" id="contractName" value="HelloGoodbye"/>
       </div>
       <div class="col">
-	<label for="clauseName">Clause name</label>
-	<input class="form-control" id="clauseName" value="hello"/>
+        <label for="clauseName">Clause name</label>
+        <input class="form-control" id="clauseName" value="hello"/>
       </div>
     </div>
   </div>
@@ -86,11 +83,25 @@ contract HelloGoodbye over TemplateModel {
             class="btn btn-primary">run</button>
   </div>
   <div class="form-group">
-    <label for="result">Response</label>
-    <textarea class="form-control" id="result" rows="5"></textarea>
-  </div>
-  <div class="form-group">
-    <label for="result">New State</label>
-    <textarea class="form-control" id="newstate" rows="3"></textarea>
+    <div class="row">
+      <div class="col">
+	<label for="result">Output Response</label>
+	<textarea class="form-control" id="result" rows="5"></textarea>
+      </div>
+      <div class="col">
+	<div class="form-group">
+	<label for="result">Output State</label>
+	<textarea class="form-control" id="newstate" rows="3"></textarea>
+	</div>
+	<div class="form-group text-right">
+	  <button type="button"
+		  onclick="clearState()"
+		  class="btn btn-primary">clear</button>
+	  <button type="button"
+		  onclick="setState()"
+		  class="btn btn-primary">set as input</button>
+	</div>
+      </div>
+    </div>
   </div>
 </form>

@@ -1,8 +1,5 @@
 /* reset */
-html{color:#000;background:#FFF;}body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,code,form,fieldset,legend,input,textarea,p,blockquote,th,td{margin:0;padding:0;}table{border-collapse:collapse;border-spacing:0;}fieldset,img{border:0;}address,caption,cite,code,dfn,em,strong,th,var{font-style:normal;font-weight:normal;}li{list-style:none;}caption,th{text-align:left;}h1,h2,h3,h4,h5,h6{font-size:100%;font-weight:normal;}q:before,q:after{content:'';}abbr,acronym{border:0;font-variant:normal;}sup{vertical-align:text-top;}sub{vertical-align:text-bottom;}input,textarea,select{font-family:inherit;font-size:inherit;font-weight:inherit;}input,textarea,select{*font-size:100%;}legend{color:#000;}
-
 body {
-    font: 14px/18px "Helvetica Neue", Arial, sans-serif;
     padding-bottom: 40px;
 }
 
@@ -16,9 +13,6 @@ a:hover {
 hr {
     border-bottom: 1px solid #ccc;
     border-top-style: none;
-}
-h1, h2, h3, h4, .links {
-    font-family:"Open Sans", "Helvetica Neue", Arial, sans-serif;
 }
 h1, h2 {
     font-weight: 700;
@@ -35,9 +29,9 @@ em {
 }
 
 .wrapper {
-    max-width: 700px;
+    max-width: 1000px;
     margin: 0 auto;
-    padding: 0 30px;
+    padding: 0 20px;
 }
 
 #main-header {
@@ -178,52 +172,6 @@ em {
     display: block;
 }
 
-.article-backlink {
-    padding-bottom: 13px;
-    border-bottom: 1px solid #e7e7e7;
-    padding-left: 163px;
-}
-.article-backlink a {
-    display: inline-block;
-    background: url(../img/blog/back.gif) no-repeat left center;
-    height: 24px;
-    line-height: 23px;
-    padding-left: 32px;
-    font-size: 12px;
-}
-
-
-.article-author {
-    margin-bottom: 40px;
-    padding-top: 20px;
-    font-size: 14px;
-    border-top: 1px solid #e7e7e7;
-    overflow: auto;
-}
-.article-author .avatar {
-    float: left;
-}
-.article-author .name {
-    margin-top: 5px;
-    float: left;
-}
-.article-author h4 {
-    font-size: 18px;
-    margin-bottom: 6px;
-}
-.article-author h4 b {
-    font-weight: 600;
-}
-.article-author img {
-    border-radius: 50%;
-    vertical-align: middle;
-    margin-right: 15px;
-}
-.article-author span {
-    margin-right: 10px;
-}
-
-
 .gist {
     font-size: 14px;
 }
@@ -254,32 +202,4 @@ em {
 }
 .post pre.terminal code { 
     background-color: #333; 
-}
-
-@media all and (max-width: 550px) {
-    #site-title img {
-        width: 25px;
-    }
-    .links a {
-        margin-right: 2px;
-        font-size: 14px;
-    }
-    .links .github-link {
-        float: none;
-    }
-    .links .github-link img {
-        display: none;
-    }
-    .wrapper {
-        padding-left: 15px;
-        padding-right: 15px;
-    }
-    .entry h1 {
-        font-size: 28px;
-        line-height: 30px;
-        margin-bottom: 7px;
-    }
-    .article-author img {
-        display: none;
-    }
 }
