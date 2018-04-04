@@ -14,15 +14,15 @@ function escapeHtml(string) {
 function compileButton() {
     // Built-in config
     const config= {
-        'source' : 'jura',
+        'source' : 'ergo',
         'target' : 'javascript',
         'withdispatch' : false
     };
     // Clean-up naming for Sexps
-    config.jura = document.getElementById("source").value;
+    config.ergo = document.getElementById("source").value;
     // Call compiler
-    document.getElementById("result").innerHTML = "[ Jura logic is compiling ]";
-    const compiled = Jura.compile(config).result;
+    document.getElementById("result").innerHTML = "[ Ergo logic is compiling ]";
+    const compiled = Ergo.compile(config).result;
     document.getElementById("result").innerHTML = escapeHtml(compiled);
 }
 function setState() {
@@ -35,15 +35,15 @@ function clearState() {
 function runButton() {
     // Built-in config
     const config= {
-        'source' : 'jura',
+        'source' : 'ergo',
         'target' : 'javascript',
         'withdispatch' : false
     };
     // Clean-up naming for Sexps
-    config.jura = document.getElementById("source").value;
+    config.ergo = document.getElementById("source").value;
     // Call compiler
     document.getElementById("result").innerHTML = "[ Compiling contract ]";
-    const compiled = Jura.compile(config).result;
+    const compiled = Ergo.compile(config).result;
     if (JSON.stringify(compiled).indexOf("Compilation error") !== -1) {
 	document.getElementById("result").innerHTML = escapeHtml(JSON.stringify(compiled));
     } else {
@@ -74,5 +74,5 @@ function runButton() {
     }
 }
 function showVersion() {
-    document.getElementById("version").innerHTML += " (v " + Jura.version() + ")";
+    document.getElementById("version").innerHTML += " (v " + Ergo.version() + ")";
 }

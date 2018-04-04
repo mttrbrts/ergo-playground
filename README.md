@@ -1,8 +1,8 @@
-# Jura
+# Ergo Playground
 
-This is a small demo for the Jura Smart Legal Contract language.
+This is a small demo for the Ergo Smart Legal Contract language.
 
-The online version can be found at [https://accordproject.github.io/jura-playground/](https://accordproject.github.io/jura-playground/).
+The online version can be found at [https://accordproject.github.io/ergo-playground/](https://accordproject.github.io/ergo-playground/).
 
-Information about Jura can be found at [https://accordproject.github.io/jura/](https://accordproject.github.io/jura/).
+Information about Ergo can be found at [https://accordproject.github.io/ergo/](https://accordproject.github.io/ergo/).
 

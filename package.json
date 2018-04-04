@@ -1,10 +1,10 @@
 {
-  "name": "jura-playground",
+  "name": "ergo-playground",
   "version": "0.0.32",
-  "description": "Jura compiler playground",
+  "description": "Ergo compiler playground",
   "repository": {
     "type": "git",
-    "url": "https://github.com/accordproject/jura"
+    "url": "https://github.com/accordproject/ergo"
   },
   "contributors": [
     {
@@ -13,15 +13,15 @@
     }
   ],
   "license": "Apache-2.0",
-  "homepage": "https://accordproject.github.io/jura/",
+  "homepage": "https://accordproject.github.io/ergo/",
   "dependencies": {
     "bootstrap": "4.0.0-beta.2",
     "cicero-core": "^0.2.45",
     "composer-common": "0.17.4",
     "debug": "^2.6.2",
     "jquery": "^3.3.1",
-    "jura-compiler": "^0.0.32",
-    "jura-engine": "^0.0.32",
+    "@accordproject/ergo-compiler": "^0.0.37",
+    "@accordproject/ergo-engine": "^0.0.37",
     "moment": "^2.20.1",
     "popper.js": "^1.12.3"
   }
