@@ -5,7 +5,7 @@ author_avatar: https://gravatar.com/avatar/ad516503a11cd5ca435acc9bb6523536?s=50
 email: jerome@clause.io
 description: A demo of the Ergo language for smart legal contracts
 baseurl: "https://accordproject.github.io/ergo-playground" # optional
-url: "https://accordproject.github.io/ergo"
+url: "https://ergo.accordprojectorg"
 github_repo: accordproject/ergo
 #google_analytics: UA-80085-YOUR-ID
 #disqus: disqus-id

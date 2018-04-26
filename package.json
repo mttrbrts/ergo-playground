@@ -1,6 +1,6 @@
 {
   "name": "ergo-playground",
-  "version": "0.0.40",
+  "version": "0.0.41",
   "description": "Ergo compiler playground",
   "repository": {
     "type": "git",
@@ -13,15 +13,15 @@
     }
   ],
   "license": "Apache-2.0",
-  "homepage": "https://accordproject.github.io/ergo/",
+  "homepage": "https://ergo.accordproject.org/",
   "dependencies": {
     "bootstrap": "4.0.0-beta.2",
     "composer-common": "0.17.4",
     "debug": "^2.6.2",
     "jquery": "^3.3.1",
-    "@accordproject/cicero-core": "^0.2.52",
-    "@accordproject/ergo-compiler": "^0.0.40",
-    "@accordproject/ergo-engine": "^0.0.40",
+    "@accordproject/cicero-core": "^0.2.54",
+    "@accordproject/ergo-compiler": "^0.0.41",
+    "@accordproject/ergo-engine": "^0.0.41",
     "moment": "^2.20.1",
     "popper.js": "^1.12.3"
   }
