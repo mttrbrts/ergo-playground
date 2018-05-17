@@ -15,8 +15,7 @@ function compileButton() {
     // Built-in config
     const config= {
         'source' : 'ergo',
-        'target' : 'javascript',
-        'withdispatch' : false
+        'target' : 'javascript'
     };
     // Clean-up naming for Sexps
     config.ergo = document.getElementById("source").value;
@@ -52,20 +51,19 @@ function runButton() {
 	const requestJson = JSON.parse(document.getElementById("request").value);
 	const stateJson = JSON.parse(document.getElementById("state").value);
 	const contractName = document.getElementById("contractName").value;
-	const clauseName = document.getElementById("clauseName").value;
 	const params = { 'contract': contractJson, 'request': requestJson, 'state' : stateJson, 'now': "" };
 	const contract = 'const contract = new ' + contractName+ '();'; // Instantiate the contract
-	const functionName = 'contract.' + clauseName;
+	const functionName = 'contract.main';
 	const clauseCall = functionName+'(params);'; // Create the clause call
 	var result;
 	try {
 	    result = eval(compiled + contract + clauseCall); // Call the logic
-	    if (!('response' in result)) {
-		document.getElementById("result").innerHTML = escapeHtml(JSON.stringify(result))
+	    if (!('left' in result)) {
+		document.getElementById("result").innerHTML = escapeHtml(JSON.stringify(result.right))
 		document.getElementById("newstate").innerHTML = escapeHtml("");
 	    } else {
-		document.getElementById("result").innerHTML = escapeHtml(JSON.stringify(result.response));
-		document.getElementById("newstate").innerHTML = escapeHtml(JSON.stringify(result.state));
+		document.getElementById("result").innerHTML = escapeHtml(JSON.stringify(result.left.response));
+		document.getElementById("newstate").innerHTML = escapeHtml(JSON.stringify(result.left.state));
 	    }
 	}
 	catch(error) {

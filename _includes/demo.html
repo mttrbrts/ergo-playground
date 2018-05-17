@@ -29,12 +29,12 @@ concept TemplateModel {
         <textarea class="form-control" id="source" rows="10">namespace org.accordproject.hellogoodbye
 
 contract HelloGoodbye over TemplateModel {
-  clause hello(request Request) : Response {
+  clause hello(request : Request) : Response {
     return new Response{
       output: "Hello " ++ contract.name
                        ++ " (" ++ request.input ++")" }
   }
-  clause goodbye(request Request) : Response {
+  clause goodbye(request : Request) : Response {
     return new Response{
       output: "Goodbye " ++ contract.name
                          ++ " (" ++ request.input ++")" }
@@ -70,10 +70,6 @@ contract HelloGoodbye over TemplateModel {
       <div class="col">
         <label for="contractName">Contract name</label>
         <input class="form-control" id="contractName" value="HelloGoodbye"/>
-      </div>
-      <div class="col">
-        <label for="clauseName">Clause name</label>
-        <input class="form-control" id="clauseName" value="hello"/>
       </div>
     </div>
   </div>

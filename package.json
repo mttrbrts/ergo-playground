@@ -1,6 +1,6 @@
 {
   "name": "ergo-playground",
-  "version": "0.0.41",
+  "version": "0.0.45",
   "description": "Ergo compiler playground",
   "repository": {
     "type": "git",
@@ -20,8 +20,8 @@
     "debug": "^2.6.2",
     "jquery": "^3.3.1",
     "@accordproject/cicero-core": "^0.2.54",
-    "@accordproject/ergo-compiler": "^0.0.41",
-    "@accordproject/ergo-engine": "^0.0.41",
+    "@accordproject/ergo-compiler": "^0.0.45",
+    "@accordproject/ergo-engine": "^0.0.45",
     "moment": "^2.20.1",
     "popper.js": "^1.12.3"
   }
