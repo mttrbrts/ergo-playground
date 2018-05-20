@@ -1,0 +1,178 @@
+[
+  {
+    "name": "AcceptanceOfDelivery",
+    "dir": "data/acceptance-of-delivery",
+    "ergo": "lib/logic.ergo",
+    "models": [],
+    "contract": "contract.json",
+    "request": "request.json",
+    "state": "state.json",
+    "contractname": "AcceptanceOfDelivery",
+    "expected": {
+      "receiver": "resource:org.hyperledger.composer.system.Participant#Party%20B",
+      "shipper": "resource:org.hyperledger.composer.system.Participant#Party%20A",
+      "status": "OUTSIDE_INSPECTION_PERIOD",
+      "$class": "org.accordproject.acceptanceofdelivery.InspectionResponse"
+    }
+  },
+  {
+    "name": "CopyrightLicense",
+    "dir": "data/copyright-license",
+    "ergo": "lib/logic.ergo",
+    "models": [
+      "models/model.cto"
+    ],
+    "contract": "contract.json",
+    "request": "request.json",
+    "state": "state.json",
+    "contractname": "CopyrightLicense",
+    "expected": {
+      "amount": 100,
+      "$class": "org.accordproject.copyrightlicense.PayOut"
+    }
+  },
+  {
+    "name": "DemandForecast",
+    "dir": "data/demandforecast",
+    "ergo": "lib/logic.ergo",
+    "models": [
+      "models/model.cto"
+    ],
+    "contract": "contract.json",
+    "request": "request.json",
+    "state": "state.json",
+    "contractname": "DemandForecast",
+    "expected": {
+      "quarter": 2,
+      "year": 2018,
+      "requiredPurchase": 1020,
+      "$class": "org.accordproject.demandforecast.BindingResponse"
+    }
+  },
+  {
+    "name": "HelloWorld",
+    "dir": "data/helloworld",
+    "ergo": "lib/logic.ergo",
+    "models": [
+      "models/model.cto"
+    ],
+    "contract": "contract.json",
+    "request": "request.json",
+    "state": "state.json",
+    "contractname": "HelloWorld",
+    "expected": {
+      "output": "Hello Fred Blogs Accord Project"
+    }
+  },
+  {
+    "name": "HelloWorldState",
+    "dir": "data/helloworldstate",
+    "ergo": "lib/logic.ergo",
+    "models": [
+      "models/model.cto"
+    ],
+    "contract": "contract.json",
+    "request": "request.json",
+    "state": "state.json",
+    "contractname": "HelloWorldState",
+    "expected": {
+      "output": "Hello Fred Blogs Accord Project(1)"
+    }
+  },
+  {
+    "name": "InstallmentSale",
+    "dir": "data/installment-sale",
+    "ergo": "lib/logic.ergo",
+    "models": [
+      "models/model.cto"
+    ],
+    "contract": "contract.json",
+    "request": "request.json",
+    "state": "state.json",
+    "contractname": "InstallmentSale",
+    "expected": {
+      "total_paid": 2500,
+      "balance": 7612.499999999999,
+      "$class": "org.accordproject.installmentsale.Balance"
+    }
+  },
+  {
+    "name": "LateDeliveryAndPenalty",
+    "dir": "data/latedeliveryandpenalty",
+    "ergo": "lib/logic.ergo",
+    "models": [
+      "models/base.cto",
+      "models/clause.cto"
+    ],
+    "contract": "contract.json",
+    "request": "request.json",
+    "state": "state.json",
+    "contractname": "LateDeliveryAndPenalty",
+    "expected": {
+      "buyerMayTerminate": true,
+      "penalty": 110.00000000000001,
+      "$class": "org.accordproject.latedeliveryandpenalty.LateDeliveryAndPenaltyResponse"
+    }
+  },
+  {
+    "name": "PerishableGoods",
+    "dir": "data/perishable-goods",
+    "ergo": "lib/logic.ergo",
+    "models": [
+      "models/model.cto"
+    ],
+    "contract": "contract.json",
+    "request": "request.json",
+    "state": "state.json",
+    "contractname": "PerishableGoods",
+    "expected": {
+      "late": true,
+      "penalty": 0,
+      "totalPrice": 0,
+      "shipment": {
+        "$class": "org.accordproject.perishablegoods.Shipment",
+        "shipmentId": "SHIP_001",
+        "sensorReadings": [
+          {
+            "$class": "org.accordproject.perishablegoods.SensorReading",
+            "centigrade": 2,
+            "humidity": 80,
+            "shipment": "resource:org.accordproject.perishablegoods.Shipment#SHIP_001",
+            "transactionId": "a"
+          },
+          {
+            "$class": "org.accordproject.perishablegoods.SensorReading",
+            "centigrade": 5,
+            "humidity": 90,
+            "shipment": "resource:org.accordproject.perishablegoods.Shipment#SHIP_001",
+            "transactionId": "b"
+          },
+          {
+            "$class": "org.accordproject.perishablegoods.SensorReading",
+            "centigrade": 15,
+            "humidity": 65,
+            "shipment": "resource:org.accordproject.perishablegoods.Shipment#SHIP_001",
+            "transactionId": "c"
+          }
+        ]
+      },
+      "$class": "org.accordproject.perishablegoods.PriceCalculation"
+    }
+  },
+  {
+    "name": "Volumediscount",
+    "dir": "data/volumediscount",
+    "ergo": "lib/logic.ergo",
+    "models": [
+      "models/clause.cto"
+    ],
+    "contract": "contract.json",
+    "request": "request.json",
+    "state": "state.json",
+    "contractname": "VolumeDiscount",
+    "expected": {
+      "discountRate": 3,
+      "$class": "org.accordproject.volumediscount.VolumeDiscountResponse"
+    }
+  }
+]
