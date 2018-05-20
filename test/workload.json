@@ -9,8 +9,8 @@
     "state": "state.json",
     "contractname": "AcceptanceOfDelivery",
     "expected": {
-      "receiver": "resource:org.hyperledger.composer.system.Participant#Party%20B",
-      "shipper": "resource:org.hyperledger.composer.system.Participant#Party%20A",
+      "receiver": "Party B",
+      "shipper": "Party A",
       "status": "OUTSIDE_INSPECTION_PERIOD",
       "$class": "org.accordproject.acceptanceofdelivery.InspectionResponse"
     }
