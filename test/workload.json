@@ -1,9 +1,11 @@
 [
   {
     "name": "AcceptanceOfDelivery",
-    "dir": "data/acceptance-of-delivery",
+    "dir": "../node_modules/cicero-template-library/acceptance-of-delivery",
     "ergo": "lib/logic.ergo",
-    "models": [],
+    "models": [
+      "models/model.cto"
+    ],
     "contract": "contract.json",
     "request": "request.json",
     "state": "state.json",
@@ -17,7 +19,7 @@
   },
   {
     "name": "CopyrightLicense",
-    "dir": "data/copyright-license",
+    "dir": "../node_modules/cicero-template-library/copyright-license",
     "ergo": "lib/logic.ergo",
     "models": [
       "models/model.cto"
@@ -33,7 +35,7 @@
   },
   {
     "name": "DemandForecast",
-    "dir": "data/demandforecast",
+    "dir": "../node_modules/cicero-template-library/demandforecast",
     "ergo": "lib/logic.ergo",
     "models": [
       "models/model.cto"
@@ -51,7 +53,7 @@
   },
   {
     "name": "HelloWorld",
-    "dir": "data/helloworld",
+    "dir": "../node_modules/cicero-template-library/helloworld",
     "ergo": "lib/logic.ergo",
     "models": [
       "models/model.cto"
@@ -66,7 +68,7 @@
   },
   {
     "name": "HelloWorldState",
-    "dir": "data/helloworldstate",
+    "dir": "../node_modules/cicero-template-library/helloworldstate",
     "ergo": "lib/logic.ergo",
     "models": [
       "models/model.cto"
@@ -81,7 +83,7 @@
   },
   {
     "name": "InstallmentSale",
-    "dir": "data/installment-sale",
+    "dir": "../node_modules/cicero-template-library/installment-sale",
     "ergo": "lib/logic.ergo",
     "models": [
       "models/model.cto"
@@ -98,7 +100,7 @@
   },
   {
     "name": "LateDeliveryAndPenalty",
-    "dir": "data/latedeliveryandpenalty",
+    "dir": "../node_modules/cicero-template-library/latedeliveryandpenalty",
     "ergo": "lib/logic.ergo",
     "models": [
       "models/base.cto",
@@ -116,7 +118,7 @@
   },
   {
     "name": "PerishableGoods",
-    "dir": "data/perishable-goods",
+    "dir": "../node_modules/cicero-template-library/perishable-goods",
     "ergo": "lib/logic.ergo",
     "models": [
       "models/model.cto"
@@ -161,7 +163,7 @@
   },
   {
     "name": "Volumediscount",
-    "dir": "data/volumediscount",
+    "dir": "../node_modules/cicero-template-library/volumediscount",
     "ergo": "lib/logic.ergo",
     "models": [
       "models/clause.cto"
