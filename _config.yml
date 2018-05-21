@@ -21,4 +21,4 @@ sass:
     load_paths:
         - _sass
         - node_modules
-exclude: [node_modules/balanced-match,node_modules/cicero-template-library,node_modules/brace-expansion,node_modules/eslint,test]
+exclude: [node_modules/balanced-match,node_modules/cicero-template-library,node_modules/brace-expansion,node_modules/eslint,node_modules/nunjucks,test]

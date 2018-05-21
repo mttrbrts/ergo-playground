@@ -162,6 +162,51 @@
     }
   },
   {
+    "name": "PerishableGoods",
+    "dir": "../node_modules/cicero-template-library/perishable-goods",
+    "ergo": "lib/logic.ergo",
+    "models": [
+      "models/model.cto"
+    ],
+    "contract": "contract.json",
+    "request": "request.json",
+    "state": "state.json",
+    "contractname": "PerishableGoods",
+    "expected": {
+      "late": true,
+      "penalty": 0,
+      "totalPrice": 0,
+      "shipment": {
+        "$class": "org.accordproject.perishablegoods.Shipment",
+        "shipmentId": "SHIP_001",
+        "sensorReadings": [
+          {
+            "$class": "org.accordproject.perishablegoods.SensorReading",
+            "centigrade": 2,
+            "humidity": 80,
+            "shipment": "resource:org.accordproject.perishablegoods.Shipment#SHIP_001",
+            "transactionId": "a"
+          },
+          {
+            "$class": "org.accordproject.perishablegoods.SensorReading",
+            "centigrade": 5,
+            "humidity": 90,
+            "shipment": "resource:org.accordproject.perishablegoods.Shipment#SHIP_001",
+            "transactionId": "b"
+          },
+          {
+            "$class": "org.accordproject.perishablegoods.SensorReading",
+            "centigrade": 15,
+            "humidity": 65,
+            "shipment": "resource:org.accordproject.perishablegoods.Shipment#SHIP_001",
+            "transactionId": "c"
+          }
+        ]
+      },
+      "$class": "org.accordproject.perishablegoods.PriceCalculation"
+    }
+  },
+  {
     "name": "Volumediscount",
     "dir": "../node_modules/cicero-template-library/volumediscount",
     "ergo": "lib/logic.ergo",
