@@ -4,7 +4,7 @@ author: Jerome Simeon
 author_avatar: https://gravatar.com/avatar/ad516503a11cd5ca435acc9bb6523536?s=50
 email: jerome@clause.io
 description: A demo of the Ergo language for smart legal contracts
-baseurl: "" # optional
+baseurl: "https://accordproject.github.io/ergo-playground" # optional
 url: "https://ergo.accordprojectorg"
 github_repo: accordproject/ergo
 #google_analytics: UA-80085-YOUR-ID
@@ -21,4 +21,4 @@ sass:
     load_paths:
         - _sass
         - node_modules
-exclude: [node_modules/balanced-match,node_modules/cicero-template-library,node_modules/brace-expansion,test]
+exclude: [node_modules/balanced-match,node_modules/cicero-template-library,node_modules/brace-expansion,node_modules/eslint,test]
