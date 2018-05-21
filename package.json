@@ -1,10 +1,13 @@
 {
   "name": "ergo-playground",
-  "version": "0.0.41",
+  "version": "0.0.47",
   "description": "Ergo compiler playground",
   "repository": {
     "type": "git",
     "url": "https://github.com/accordproject/ergo"
+  },
+  "scripts": {
+    "test": "mocha"
   },
   "contributors": [
     {
@@ -16,13 +19,25 @@
   "homepage": "https://ergo.accordproject.org/",
   "dependencies": {
     "bootstrap": "4.0.0-beta.2",
-    "composer-common": "0.17.4",
+    "composer-common": "0.19.5",
     "debug": "^2.6.2",
     "jquery": "^3.3.1",
-    "@accordproject/cicero-core": "^0.2.54",
-    "@accordproject/ergo-compiler": "^0.0.41",
-    "@accordproject/ergo-engine": "^0.0.41",
+    "@accordproject/cicero-core": "^0.3.9",
+    "@accordproject/ergo-compiler": "^0.0.47",
+    "@accordproject/ergo-engine": "^0.0.47",
+    "cicero-template-library": "accordproject/cicero-template-library#ergo-templates",
     "moment": "^2.20.1",
     "popper.js": "^1.12.3"
+  },
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "chai-as-promised": "^6.0.0",
+    "chai-things": "^0.2.0",
+    "eslint": "^4.19.1",
+    "jsdoc": "^3.5.5",
+    "lerna": "^2.5.1",
+    "license-check": "^1.1.5",
+    "mocha": "^5.1.1",
+    "nyc": "^11.8.0"
   }
 }
