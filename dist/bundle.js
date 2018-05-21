@@ -30,7 +30,7 @@ function initForm() {
         if (examples[i].name === defaultTemplate.name) {
             index = i;
         }
-        selectHTML = "<option value='" + examples[i].name + "'>" + examples[i].contractname + "</option>";
+        selectHTML = "<option value='" + examples[i].name + "'>" + examples[i].name + "</option>";
         newSelect.innerHTML = selectHTML;
         document.getElementById('template').add(newSelect);
     }
@@ -49,6 +49,9 @@ function compileButton() {
     document.getElementById("result").innerHTML = "[ Ergo logic is compiling ]";
     const compiled = Ergo.compile(config).result;
     document.getElementById("result").innerHTML = escapeHtml(compiled);
+}
+function contractNameOfName(name) {
+    return findTemplate(name).contractname;
 }
 function runButton() {
     // Built-in config
@@ -69,7 +72,7 @@ function runButton() {
 	const contractJson = JSON.parse(document.getElementById("contract").value);
 	const requestJson = JSON.parse(document.getElementById("request").value);
 	const stateJson = JSON.parse(document.getElementById("state").value);
-	const contractName = document.getElementById("template").value;
+	const contractName = contractNameOfName(document.getElementById("template").value);
 	const params = { 'contract': contractJson, 'request': requestJson, 'state' : stateJson, 'now': moment('2018-05-21') };
 	const contract = 'const contract = new ' + contractName+ '();'; // Instantiate the contract
 	const functionName = 'contract.main';
