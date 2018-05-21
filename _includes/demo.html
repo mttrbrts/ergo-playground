@@ -1,50 +1,55 @@
 <form>
-  <h4>Template</h4>
-  <div class="form-group">
+  <div class="form-group form-inline">
     <select class="form-control" id="template" onchange="fillTemplate()">
     </select>
   </div>
-  <h4>Contract Creation</h4>
+  <h4>Contract Template</h4>
   <div class="form-group">
-    <div class="row">
+    <div class="form-row">
       <div class="col">
-        <label for="cto">CTO model</label>
-        <textarea class="form-control" id="model" rows="10"></textarea>
+	      <label for="grammar">Grammar</label>
+	      <textarea class="form-control" id="grammar" rows="5" readonly="true"></textarea>
       </div>
       <div class="col">
-        <label for="source">Ergo source</label>
-        <textarea class="form-control" id="source" rows="10"></textarea>
+	      <label for="contract">Variables</label>
+	      <textarea class="form-control" id="contract" rows="5"></textarea>
       </div>
     </div>
   </div>
   <div class="form-group">
-	  <label for="contract">Contract variables</label>
-	  <textarea class="form-control" id="contract" rows="5"></textarea>
+    <label for="cto">Model (CML)</label>
+    <textarea class="form-control" id="model" rows="5"></textarea>
+  </div>
+  <div class="form-group">
+    <label for="source">Logic (Ergo)</label>
+    <textarea class="form-control" id="source" rows="15"></textarea>
   </div>
   <h4>Contract Execution</h4>
   <div class="form-group">
-    <div class="row">
-      <div class="col">
-        <label for="request">Request</label>
-        <textarea class="form-control" id="request" rows="3"></textarea>
-      </div>
+    <div class="form-row">
       <div class="col">
         <label for="state">State</label>
-        <textarea class="form-control" id="state" rows="3"></textarea>
+        <textarea class="form-control" id="state" rows="4"></textarea>
+      </div>
+      <div class="col">
       </div>
     </div>
   </div>
-  <div class="form-group text-right">
+  <div class="form-group">
+    <div class="form-row">
+      <div class="col">
+        <label for="request">Request</label>
+        <textarea class="form-control" id="request" rows="4"></textarea>
+      </div>
+      <div class="col">
+	      <label for="result">Response</label>
+	      <textarea class="form-control" id="result" rows="4"></textarea>
+      </div>
+    </div>
+  </div>
+  <div class="form-group">
     <button type="button"
             onclick="runButton()"
             class="btn btn-primary">run</button>
-  </div>
-  <div class="form-group">
-    <div class="row">
-      <div class="col">
-	      <label for="result">Response</label>
-	      <textarea class="form-control" id="result" rows="5"></textarea>
-      </div>
-    </div>
   </div>
 </form>

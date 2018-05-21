@@ -107,6 +107,7 @@ function setTemplate(contractName) {
         document.getElementById("model").innerHTML = template.models[0];
     }
 	  document.getElementById("contract").innerHTML = template.contract;
+	  document.getElementById("grammar").innerHTML = template.grammar;
 	  document.getElementById("request").innerHTML = template.request;
 	  document.getElementById("state").innerHTML = template.state;
 	  document.getElementById("result").innerHTML = "";

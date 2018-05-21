@@ -45,13 +45,14 @@ function mk_models(models) {
     return mods;
 }
 
-function mk_example(name, ergo, models, contract, request, state, contractname) {
+function mk_example(name, ergo, models, contract, grammar, request, state, contractname) {
     let example = "";
     example += "  {" + "\n";
     example += "    \'name': '" + name + "',\n";
     example += "    'ergo': '" + escapeStr(ergo) + "',\n";
     example += "    'models': " + mk_models(models) + ",\n";
     example += "    'contract': '" + escapeStr(contract) + "',\n";
+    example += "    'grammar': '" + escapeStr(grammar) + "',\n";
     example += "    'request': '" + escapeStr(request) + "',\n";
     example += "    'state': '" + escapeStr(state) + "',\n";
     example += "    'contractname': '" + contractname + "'\n";
@@ -69,6 +70,7 @@ function mk_examples(workload) {
         const ergo = test.ergo;
         const models = test.models;
         const contract = test.contract;
+        const grammar = test.grammar;
         const request = test.request;
         const state = test.state;
         const contractname = test.contractname;
@@ -79,13 +81,14 @@ function mk_examples(workload) {
             ctoTexts.push(Fs.readFileSync(Path.resolve(__dirname, dir, models[i]), 'utf8'));
         }
         const contractJson = Fs.readFileSync(Path.resolve(__dirname, dir, contract), 'utf8');
+        const grammarText = Fs.readFileSync(Path.resolve(__dirname, dir, grammar), 'utf8');
         const requestJson = Fs.readFileSync(Path.resolve(__dirname, dir, request), 'utf8');
         const stateJson = Fs.readFileSync(Path.resolve(__dirname, dir, state), 'utf8');
         //console.info(mk_example(name,ergo,models,contract,request,state,contractname));
         if (i > 0) {
             examples += ",\n";
         }
-        examples += mk_example(name,ergoText,ctoTexts,contractJson,requestJson,stateJson,contractname);
+        examples += mk_example(name,ergoText,ctoTexts,contractJson,grammarText,requestJson,stateJson,contractname);
     }
     examples += "\n];\n";
 }
