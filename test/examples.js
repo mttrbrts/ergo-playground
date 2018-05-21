@@ -25,7 +25,9 @@ let examples = "";
 
 function escapeStr(str) {
     let res;
-    res = str.replace(/(?:\r\n|\r|\n)/g, '\\n');
+    res = str.replace(/\/\*[\s\S]*?\*\//g, '');
+    res = res.replace(/(?:\r\n|\r|\n)/g, '\\n');
+    res = res.replace(/(\\n\\n)/g, '\\n');
     res = res.replace(/(')/g, '\\\'');
     return res;
 }
