@@ -73,7 +73,7 @@ function runButton() {
 	const requestJson = JSON.parse(document.getElementById("request").value);
 	const stateJson = JSON.parse(document.getElementById("state").value);
 	const contractName = contractNameOfName(document.getElementById("template").value);
-	const params = { 'contract': contractJson, 'request': requestJson, 'state' : stateJson, 'now': moment('2018-05-21') };
+	const params = { 'contract': contractJson, 'request': requestJson, 'state' : stateJson, 'emit': [], 'now': moment('2018-05-21') };
 	const contract = 'const contract = new ' + contractName+ '();'; // Instantiate the contract
 	const functionName = 'contract.main';
 	const clauseCall = functionName+'(params);'; // Create the clause call
