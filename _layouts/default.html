@@ -25,9 +25,12 @@
     <!-- Ergo -->
     <script src="{{'/node_modules/@accordproject/ergo-compiler/lib/ergocore.js' | prepend: site.baseurl}}"></script>
     <script src="{{'/node_modules/@accordproject/ergo-compiler/lib/ergoruntime.js' | prepend: site.baseurl}}"></script>
+    <script src="{{'/dist/moment.min.js' | prepend: site.baseurl}}"></script>
+    <script src="{{'/dist/examples_bundle.js' | prepend: site.baseurl}}"></script>
     <script src="{{'/dist/bundle.js' | prepend: site.baseurl}}"></script>
     <script type="text/javascript">
       showVersion();
+      initForm();
     </script>
   </body>
 </html>

@@ -30,12 +30,25 @@ function escapeStr(str) {
     return res;
 }
 
+function mk_models(models) {
+    let mods = ""
+    mods += " [\n";
+    for (const i in models) {
+        if (i > 0) {
+            mods += ",\n";
+        }
+        mods += "      '" + escapeStr(models[i]) + "'";
+    }
+    mods += "\n      ]";
+    return mods;
+}
+
 function mk_example(name, ergo, models, contract, request, state, contractname) {
     let example = "";
     example += "  {" + "\n";
     example += "    \'name': '" + name + "',\n";
     example += "    'ergo': '" + escapeStr(ergo) + "',\n";
-    example += "    'models': []," + "\n";
+    example += "    'models': " + mk_models(models) + ",\n";
     example += "    'contract': '" + escapeStr(contract) + "',\n";
     example += "    'request': '" + escapeStr(request) + "',\n";
     example += "    'state': '" + escapeStr(state) + "',\n";
@@ -70,7 +83,7 @@ function mk_examples(workload) {
         if (i > 0) {
             examples += ",\n";
         }
-        examples += mk_example(name,ergoText,models,contractJson,requestJson,stateJson,contractname);
+        examples += mk_example(name,ergoText,ctoTexts,contractJson,requestJson,stateJson,contractname);
     }
     examples += "\n];\n";
 }
